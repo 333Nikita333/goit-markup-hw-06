@@ -22,7 +22,7 @@
     <header>
       <!--Навігація сайту-->
       <div class="nav container">
-        <nav class="nav-site">
+        <nav>
           <a class="logo" href="./index.html">Web<span class="logo-studio">Studio</span></a>
           <ul class="site-nav list">
             <li class="item">
@@ -354,7 +354,7 @@
       </section>
     </main>
     <!--Футер сайту-->
-    <footer class="footer-site">
+    <footer class="footer">
       <div class="container footer">
         <div class="container-adress">
           <a class="logo" href="">Web<span class="logo-studio">Studio</span></a>
@@ -404,26 +404,71 @@
           </ul>
         </div>
         <div class="container-subscribe">
-          <div class="container-email">
-            <h3 class="title">Підпишіться на розсилку</h3>
-            <form>
+          <form class="form-email">
+            <div class="form-group">
+              <b class="title">Підпишіться на розсилку</b>
               <label for="user_email"></label>
-              <input type="email" name="email" in="user_email" placeholder="E-mail" />
-            </form>
-          </div>
-          <button class="button send" type="submit">
-            Підписатися
-            <svg class="icon-send" width="24px" height="24px">
-              <use href="./images/icons.svg#icon-send"></use>
-            </svg>
-          </button>
+              <input type="email" name="email" id="user_email" placeholder="E-mail" />
+            </div>
+            <button class="button subscribe" type="submit">
+              Підписатися
+              <svg class="icon-subscribe" width="24px" height="24px">
+                <use href="./images/icons.svg#icon-subscribe"></use>
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
     </footer>
 
     <!-- Модальне вікно -->
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop" data-modal>
+      is-hidden
       <div class="modal">
+        <form class="modal-form">
+          <b class="title-modal-form">Залиште свої дані, ми вам передзвонимо</b>
+
+          <label class="group username">
+            <span class="form-label">Ім'я</span>
+            <input type="text" name="name" placeholder=" " />
+            <svg class="icon person" width="18px" height="18px">
+              <use href="./images/icons.svg#icon-person"></use>
+            </svg>
+          </label>
+
+          <label class="group tel">
+            <span class="form-label">Телефон</span>
+            <input type="tel" name="tel" placeholder=" " />
+            <svg class="icon tel" width="18px" height="18px">
+              <use href="./images/icons.svg#icon-phone"></use>
+            </svg>
+          </label>
+
+          <label class="group email">
+            <span class="form-label"><span lang="en">Email</span></span>
+            <input type="email" name="email" placeholder=" " />
+            <svg class="icon email" width="18px" height="18px">
+              <use href="./images/icons.svg#icon-email"></use>
+            </svg>
+          </label>
+
+          <label class="group feedback">
+            <span class="form-label">Коментар</span>
+            <textarea name="feedback" rows="5" placeholder="Введіть текст"></textarea>
+          </label>
+
+          <label class="group checkbox">
+            <input type="checkbox" name="checkbox_terms" />
+            <p class="text-checkbox">
+              Погоджуюся з розсилкою та приймаю
+              <span class="link-terms">
+                <a href="" target="_blank" rel="noreferrer noopener">Умови договору</a>
+              </span>
+            </p>
+          </label>
+
+          <button class="button send" type="submit">Відправити</button>
+        </form>
         <button class="button-close-modal" type="button" data-modal-close>
           <svg width="18px" height="18px">
             <use href="./images/icons.svg#icon-close"></use>
