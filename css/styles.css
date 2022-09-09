@@ -564,11 +564,6 @@ nav {
 .backdrop.is-hidden .modal {
     transform: translate(-50%, -50%) scale(1.5);
 }
-
-
-
-
-
 .modal-form {
     align-items: center;
 }
@@ -606,6 +601,8 @@ nav {
 
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+
+    transition: border var(--time-duration) var(--timing-function);
 }
 .group:focus-within > input,
 .group:focus-within > textarea {
@@ -619,6 +616,7 @@ nav {
 
     fill: currentColor;
     color: var(--secondary-text-color);
+    transition: color var(--time-duration) var(--timing-function);
 }
 .group:focus-within >.icon {
     color: var(--accent-color);
@@ -634,39 +632,57 @@ nav {
     color: rgba(117, 117, 117, 0.5);
 }
 .group.checkbox{
+    display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items: center;
     margin-bottom: 30px;
 }
-.group.checkbox input {
-    margin-right: 4px;
+.group.checkbox input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
-.group input[type="checkbox"]{
-    min-width: 16px;
-    min-height: 15px;
+.icon-border {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--secondary-text-color);
+    border-radius: 2px;
+
+    margin-right: 7px;
+    transition: background-color var(--time-duration) var(--timing-function),
+                background-image var(--time-duration) var(--timing-function),
+                border-color var(--time-duration) var(--timing-function);
+}
+.group.checkbox input:checked + .icon-border {
+    background-color: var(--accent-color);
+    background-image: url(../images/icon-check.svg);
+    background-size: contain;
+    background-origin: border-box;
+    border-color: var(--accent-color);
 }
 .group .text-checkbox {
     margin: 0;
 
     line-height: 1.71;
 }
-
-
-
-
-
-
-
-
-
-
-
-
+.text-checkbox span {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
 .button-close-modal {
     position: absolute;
     top: 8px;
     right: 8px;
-    transition: border-color var(--time-duration) var(--timing-function);
+    transition: color var(--time-duration) var(--timing-function);
 
     display: flex;
     cursor: pointer;
@@ -685,7 +701,6 @@ nav {
 .button-close-modal:focus {
     color: var(--accent-color);
 }
-
 
 
 

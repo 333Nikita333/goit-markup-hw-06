@@ -422,12 +422,10 @@
     </footer>
 
     <!-- Модальне вікно -->
-    <div class="backdrop" data-modal>
-      is-hidden
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <form class="modal-form">
           <b class="title-modal-form">Залиште свої дані, ми вам передзвонимо</b>
-
           <label class="group username">
             <span class="form-label">Ім'я</span>
             <input type="text" name="name" placeholder=" " />
@@ -435,7 +433,6 @@
               <use href="./images/icons.svg#icon-person"></use>
             </svg>
           </label>
-
           <label class="group tel">
             <span class="form-label">Телефон</span>
             <input type="tel" name="tel" placeholder=" " />
@@ -443,7 +440,6 @@
               <use href="./images/icons.svg#icon-phone"></use>
             </svg>
           </label>
-
           <label class="group email">
             <span class="form-label"><span lang="en">Email</span></span>
             <input type="email" name="email" placeholder=" " />
@@ -451,22 +447,15 @@
               <use href="./images/icons.svg#icon-email"></use>
             </svg>
           </label>
-
           <label class="group feedback">
             <span class="form-label">Коментар</span>
             <textarea name="feedback" rows="5" placeholder="Введіть текст"></textarea>
           </label>
-
           <label class="group checkbox">
             <input type="checkbox" name="checkbox_terms" />
-            <p class="text-checkbox">
-              Погоджуюся з розсилкою та приймаю
-              <span class="link-terms">
-                <a href="" target="_blank" rel="noreferrer noopener">Умови договору</a>
-              </span>
-            </p>
+            <span class="icon-border"></span>
+            <span class="text-checkbox">Погоджуюся з розсилкою та приймаю <span>Умови договору</span></span>
           </label>
-
           <button class="button send" type="submit">Відправити</button>
         </form>
         <button class="button-close-modal" type="button" data-modal-close>
