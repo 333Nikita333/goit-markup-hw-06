@@ -610,6 +610,7 @@ nav {
 .group:focus-within > input,
 .group:focus-within > textarea {
     border: 1px solid var(--accent-color);
+    outline: transparent;
 }
 .group > .icon {
     position: absolute;
