@@ -508,6 +508,8 @@ nav {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
+
+    transition: border var(--time-duration) var(--timing-function);
 }
 .form-group:focus-within input {
     border: 1px solid var(--accent-color)
@@ -541,7 +543,6 @@ nav {
     height: 100%;
 
     background-color: rgba(0, 0, 0, 0.2);
-
 }
 .backdrop.is-hidden {
     opacity: 0;
@@ -571,11 +572,12 @@ nav {
     align-items: center;
 }
 .title-modal-form {
-    color: var(--secondary-text-color);
+    margin-bottom: 12px;
+
+    text-align: center;
     font-size: 20px;
     line-height: 1.15;
-    text-align: center;
-    margin-bottom: 12px;
+    color: var(--secondary-text-color);
 }
 .modal-form,
 .modal-form .group{
@@ -619,6 +621,7 @@ nav {
 
     fill: currentColor;
     color: var(--secondary-text-color);
+
     transition: color var(--time-duration) var(--timing-function);
 }
 .group:focus-within >.icon {
@@ -635,6 +638,7 @@ nav {
     color: rgba(117, 117, 117, 0.5);
 }
 .group.checkbox{
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -653,24 +657,32 @@ nav {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
-.icon-border {
-    display: inline-block;
+.icon-check {
+    position: absolute;
+    opacity: 0;
+    transition: opacity var(--time-duration) var(--timing-function);
+    
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+.form-input:checked + .icon-check {
+    opacity: 1;
+}
+.text-checkbox::before {
+    content:'';
+    display: inline-flex;
     width: 16px;
     height: 15px;
-    border: 2px solid var(--secondary-text-color);
+    margin-right: 7px;
+    opacity: 1;
+
+    border: 2px solid #000;
     border-radius: 2px;
 
-    margin-right: 7px;
-    transition: background-color var(--time-duration) var(--timing-function),
-                background-image var(--time-duration) var(--timing-function),
-                border-color var(--time-duration) var(--timing-function);
+    transition: opacity var(--time-duration) var(--timing-function);
 }
-.group.checkbox input:checked + .icon-border {
-    background-color: var(--accent-color);
-    background-image: url(../images/icon-check.svg);
-    background-size: contain;
-    background-origin: border-box;
-    border-color: var(--accent-color);
+.form-input:checked ~ .text-checkbox::before  {
+    opacity: 0;
 }
 .group .text-checkbox {
     margin: 0;
